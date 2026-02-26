@@ -1,0 +1,31 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T13:42:22.146Z",
+  "summary": "The diff modifies LanguageContext.tsx to fix language switching and localStorage persistence, but does not include any changes to translations.ts. REQ-1 is partially addressed (context logic fixed), but REQ-2 (auditing and completing translations.ts) is entirely unaddressed. The project_state.json also marks both AR-1 and AR-2 as 'pending', confirming neither requirement is fully implemented.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "Audit translations.ts to ensure every language's translation object is complete — all keys defined in the Translation interface must have non-empty string values for every supported language. Fill in any missing or placeholder entries.",
+      "reason": "The diff does not include any changes to translations.ts. The file is neither added nor modified, so missing/placeholder translation entries remain unfixed.",
+      "evidence": [
+        "frontend/src/contexts/LanguageContext.tsx",
+        "project_state.json"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "The SOS overlay, helplines page, safety tips page, for boys page, and all navigation labels update text when the language is switched.",
+      "reason": "While LanguageContext.tsx is updated to correctly resolve translations and persist language, the actual UI components (SOS overlay, helplines page, safety tips page, for boys page, navigation labels) are not shown to be modified in the diff. If they were not consuming the context correctly before, those fixes are absent.",
+      "evidence": [
+        "frontend/src/contexts/LanguageContext.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.72,
+  "changed_files": [
+    "frontend/src/contexts/LanguageContext.tsx",
+    "project_state.json"
+  ]
+}

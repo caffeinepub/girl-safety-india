@@ -1,0 +1,76 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix multi-language support — only Hindi works currently",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Fix the language switching functionality so all 7 supported Indian languages work correctly when selected via the LanguageSelector component",
+      "acceptanceCriteria": [
+        "Selecting any language from the LanguageSelector dropdown updates all visible UI text to the correct translation for that language.",
+        "The t() helper in LanguageContext correctly resolves translation keys for every language defined in translations.ts.",
+        "Translations are persisted in localStorage and restored correctly on page reload for all languages.",
+        "The SOS overlay, helplines page, safety tips page, for boys page, and all navigation labels update text when the language is switched.",
+        "No language falls back to Hindi strings unless Hindi is explicitly selected."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/LanguageContext.tsx",
+          "operation": "modify",
+          "description": "Fix the t() helper function to correctly resolve translation keys for all supported languages. Ensure the function returns the translated string from the correct language object in translations.ts instead of falling back to Hindi. Verify that the language state is properly initialized from localStorage and that language changes propagate correctly to all consuming components."
+        },
+        {
+          "path": "frontend/src/components/LanguageSelector.tsx",
+          "operation": "modify",
+          "description": "Verify that the LanguageSelector component correctly calls the setLanguage function from LanguageContext when a new language is selected. Ensure the component displays the currently selected language and that all language options are properly mapped to their corresponding codes in translations.ts."
+        },
+        {
+          "path": "frontend/src/components/SOSOverlay.tsx",
+          "operation": "modify",
+          "description": "Ensure all text strings in the SOS overlay use the t() helper with the correct translation keys. Verify that the emergency message, button labels, and helpline numbers update when the language is switched."
+        },
+        {
+          "path": "frontend/src/pages/HelplinesPage.tsx",
+          "operation": "modify",
+          "description": "Ensure all helpline labels, descriptions, and instructional text use the t() helper with correct translation keys. Verify that all visible text updates when the language is switched."
+        },
+        {
+          "path": "frontend/src/pages/SafetyTipsPage.tsx",
+          "operation": "modify",
+          "description": "Ensure all safety tips, tab labels, and section titles use the t() helper with correct translation keys. Verify that content for all life stages (childhood, teenage, adulthood) and contexts (offline, online) updates when the language is switched."
+        },
+        {
+          "path": "frontend/src/pages/ForBoysPage.tsx",
+          "operation": "modify",
+          "description": "Ensure all section titles, educational content, and tip cards use the t() helper with correct translation keys. Verify that content about consent, bystander action, speaking up, impact awareness, and healthy masculinity updates when the language is switched."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure all text on the landing page including the hero banner, emergency notice, and quick-access card labels use the t() helper with correct translation keys. Verify that the SOS button label and all navigation text updates when the language is switched."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure all navigation labels in the header, mobile menu, and footer use the t() helper with correct translation keys. Verify that route titles and any hardcoded text updates when the language is switched."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Audit translations.ts to ensure every language's translation object is complete with all keys defined in the Translation interface having non-empty string values",
+      "acceptanceCriteria": [
+        "Every key in the Translation interface has a corresponding non-empty translated string for each of the 7 supported languages.",
+        "No language object is missing keys relative to the Translation interface definition.",
+        "No key returns undefined or an empty string for any supported language."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/translations.ts",
+          "operation": "modify",
+          "description": "Audit the translations object to verify that each of the 7 supported Indian languages (Hindi, English, Tamil, Telugu, Kannada, Bengali, Marathi) has a complete translation object matching the Translation interface. For each language, check that every key defined in the Translation interface has a corresponding non-empty translated string value. Fill in any missing translations, replace any placeholder text, and ensure no key returns undefined or an empty string for any language. Verify that nested objects (like helplines, safetyTips, forBoys sections) are fully populated for all languages."
+        }
+      ]
+    }
+  ]
+}

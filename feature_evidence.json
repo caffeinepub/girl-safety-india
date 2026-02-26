@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-the-language-switching-functionality-so-that-all-7-supported-indian-languages-hindi-english-tamil-telugu-kannada-bengali-marathi-or-whichever-are-defined-in-translations-ts-work-correctly-when-selected-via-the-languageselector-component-currently-only-hindi-renders-translated-content-all-other-languages-fall-back-to-incorrect-or-missing-strings",
+      "featureTitle": "Fix the language switching functionality so that all 7 supported Indian languages (Hindi, English, Tamil, Telugu, Kannada, Bengali, Marathi, or whichever are defined in translations.ts) work correctly when selected via the LanguageSelector component. Currently only Hindi renders translated content; all other languages fall back to incorrect or missing strings.",
+      "files": [
+        "frontend/src/contexts/LanguageContext.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

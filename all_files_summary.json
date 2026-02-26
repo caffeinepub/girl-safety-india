@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Empty Motoko actor serving as the backend canister placeholder with no implemented methods.",
+  "feature_evidence.json": "Feature evidence report documenting the fix for language switching functionality across all 7 supported Indian languages, with high confidence tied to LanguageContext.tsx.",
+  "frontend-file-summaries.txt": "JSON document containing one-line summaries of all frontend source files, describing their roles and key content.",
+  "frontend/index.css": "Global Tailwind CSS entry point defining OKLCH-based CSS custom properties for light and dark color themes including sidebar, chart, and UI element tokens.",
+  "frontend/index.html": "HTML entry point for the React app titled 'Girl Safety India', mounting the app at the #root div and loading main.tsx as a module.",
+  "frontend/src/App.tsx": "Root app component setting up TanStack Router with four routes, a sticky header with SOS button and language selector, desktop/mobile navigation, and LanguageProvider wrapping the entire layout.",
+  "frontend/src/components/LanguageSelector.tsx": "Dropdown component using shadcn Select to switch between 7 Indian languages, displaying native language names and wired to LanguageContext.",
+  "frontend/src/components/SOSOverlay.tsx": "Full-screen emergency overlay showing a ShieldAlert icon, a translated SOS message split across two lines, and three tappable call buttons for Police (100), Women Helpline (1091), and National Emergency (112).",
+  "frontend/src/content/translations.ts": "Defines the Translation interface and complete translation objects for 7 languages (en, hi, ta, te, bn, mr, kn) covering all UI strings, safety tips, helplines, boys page content, and SOS messages.",
+  "frontend/src/contexts/LanguageContext.tsx": "React context providing language state, a setLanguage function with localStorage persistence, and a t() helper that retrieves translated strings via getTranslation for all 7 supported languages.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an ICP backend actor using TanStack Query, supporting both anonymous and authenticated (Internet Identity) actors and invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and hook for Internet Identity authentication on ICP, managing login/logout state, identity persistence, and AuthClient configuration.",
+  "frontend/src/index.css": "Global stylesheet importing Poppins/Noto Sans fonts, configuring Tailwind CSS, and defining light/dark theme CSS custom properties along with utility classes for gradients, animations, and card effects.",
+  "frontend/src/main.tsx": "Application entry point that renders the React app wrapped with QueryClientProvider and InternetIdentityProvider into the DOM root.",
+  "frontend/src/pages/ForBoysPage.tsx": "Page component displaying educational content for boys about consent, bystander action, speaking up, impact awareness, and masculinity, organized into icon-labeled sections with tip cards.",
+  "frontend/src/pages/HelplinesPage.tsx": "Page displaying Indian emergency helpline numbers (100, 112, 1091, etc.) as tappable call links with a prominent emergency banner and a list of important usage notes.",
+  "frontend/src/pages/HomePage.tsx": "Landing page featuring a hero banner with an SOS button, an emergency notice bar, and quick-access cards linking to helplines, safety tips, and the for-boys section.",
+  "frontend/src/pages/SafetyTipsPage.tsx": "Page presenting safety tips organized by life stage (childhood, teenage, adulthood) and context (offline, online) using a tabbed interface with icon-headed sections and individual tip cards.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration for the SafeHer India frontend, extending the default theme with custom colors (saffron, teal, cream, sos), fonts (Poppins, Noto Sans), border radii, box shadows, and accordion animations, using the typography, container-queries, and animate plugins.",
+  "project_state.json": "Project state metadata for SafeHer India (version 3) tracking existing features and pending work, specifically a fix for broken multi-language support (only Hindi works) and an audit task to complete all translation keys across 7 Indian languages in translations.ts."
+}

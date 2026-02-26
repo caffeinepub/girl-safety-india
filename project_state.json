@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [
+    "Multi-language support broken — only Hindi is working, other languages are not functioning"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-fix-the-language-switching-functionality-so-that-all-7-supported-indian-languages-hindi-english-tamil-telugu-kannada-bengali-marathi-or-whichever-are-defined-in-translations-ts-work-correctly-when-selected-via-the-languageselector-component-currently-only-hindi-renders-translated-content-all-other-languages-fall-back-to-incorrect-or-missing-strings",
+      "title": "Fix the language switching functionality so that all 7 supported Indian languages (Hindi, English, Tamil, Telugu, Kannada, Bengali, Marathi, or whichever are defined in translations.ts) work correctly when selected via the LanguageSelector component. Currently only Hindi renders translated content; all other languages fall back to incorrect or missing strings.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-2",
+      "summary": "Audit translations.ts to ensure every language's translation object is complete — all keys defined in the Translation interface must have non-empty string values for every supported language. Fill in any missing or placeholder entries.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "SafeHer India",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

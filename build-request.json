@@ -1,0 +1,60 @@
+{
+  "kind": "build_request",
+  "title": "Fix multi-language support — only Hindi works currently",
+  "projectName": "SafeHer India",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Fix the language switching functionality so that all 7 supported Indian languages (Hindi, English, Tamil, Telugu, Kannada, Bengali, Marathi, or whichever are defined in translations.ts) work correctly when selected via the LanguageSelector component. Currently only Hindi renders translated content; all other languages fall back to incorrect or missing strings.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-8"
+        ],
+        "quotes": [
+          "only hindi is working other languages are not working"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Selecting any language from the LanguageSelector dropdown updates all visible UI text to the correct translation for that language.",
+        "The t() helper in LanguageContext correctly resolves translation keys for every language defined in translations.ts.",
+        "Translations are persisted in localStorage and restored correctly on page reload for all languages.",
+        "The SOS overlay, helplines page, safety tips page, for boys page, and all navigation labels update text when the language is switched.",
+        "No language falls back to Hindi strings unless Hindi is explicitly selected."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Audit translations.ts to ensure every language's translation object is complete — all keys defined in the Translation interface must have non-empty string values for every supported language. Fill in any missing or placeholder entries.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-8"
+        ],
+        "quotes": [
+          "only hindi is working other languages are not working"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Every key in the Translation interface has a corresponding non-empty translated string for each of the 7 supported languages.",
+        "No language object is missing keys relative to the Translation interface definition.",
+        "No key returns undefined or an empty string for any supported language."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/ (immutable paths).",
+    "Do not change the set of supported languages — only fix the existing ones.",
+    "Do not alter the backend."
+  ],
+  "nonGoals": [
+    "Adding new languages beyond those already defined.",
+    "Redesigning the LanguageSelector UI component.",
+    "Any backend changes."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

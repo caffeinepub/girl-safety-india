@@ -1,0 +1,52 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T13:42:22.149Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Fix the language switching functionality so that all 7 supported Indian languages (Hindi, English, Tamil, Telugu, Kannada, Bengali, Marathi, or whichever are defined in translations.ts) work correctly when selected via the LanguageSelector component. Currently only Hindi renders translated content; all other languages fall back to incorrect or missing strings.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/contexts/LanguageContext.tsx",
+          "frontend/src/components/LanguageSelector.tsx",
+          "frontend/src/components/SOSOverlay.tsx",
+          "frontend/src/pages/HelplinesPage.tsx",
+          "frontend/src/pages/SafetyTipsPage.tsx",
+          "frontend/src/pages/ForBoysPage.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/contexts/LanguageContext.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Audit translations.ts to ensure every language's translation object is complete — all keys defined in the Translation interface must have non-empty string values for every supported language. Fill in any missing or placeholder entries.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/content/translations.ts"
+        ],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-implementation-plan.json",
+    "frontend/src/contexts/LanguageContext.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
